@@ -16,6 +16,5 @@ https://github.com/Diegonmarti/TFG_DAW/assets/98549170/3c2c9c86-fe48-40e5-9647-a
 
 <div align="center">
   
-![perro2](https://github.com/Diegonmarti/TFG_DAW/assets/98549170/fd2d84c4-6936-45dc-88e5-ea6abc261d9c)
-
+![perro2](https://github.com/Diegonmarti/TFG_DAW/assets/98549170/9c1e86be-94c1-4a1b-a3c0-d11f261b9ef6)
 </div>

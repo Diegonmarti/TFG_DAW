@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <span class="h3">LISTA CUIDADORES</span>
+    </div>
+    <h5 style="margin-top: 15px; color: brown;" *ngIf="empleados.length == 0">NO HAY DATOS PARA MOSTRAR</h5>
+    <div class="input-group mb-2">
+      <input type="text" class="form-control" placeholder="Buscar por nombre..." (input)="onBuscarEmpleado($event)">
+      <button class="btn btn-dark btn-lg" routerLink="/crear-empleados">Agregar</button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped mt-3" *ngIf="empleados.length>0">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleadosFiltrados">
+            <td>
+              <a [routerLink]="['/lista-empleados', empleado.nombre]">{{ empleado.nombre }}</a>
+            </td>
+            <td>{{ empleado.email }}</td>
+            <td>{{ empleado.phone }}</td>
+            <td>
+              <!-- Iconos de Acciones (Editar, Eliminar, Ver) -->
+              <img src="assets/iconos/editar.ico" alt="Icono Editar"
+                style="width: 20px; height: 20px; margin-right: 10px;">
+
+              <a (click)="eliminarEmpleado(empleado.id)" style="cursor: pointer;">
+                <img src="assets/iconos/eliminar.ico" alt="Icono Eliminar"
+                  style="width: 20px; height: 20px; margin-right: 10px;">
+              </a>
+
+              <a [routerLink]="['/lista-empleados', empleado.nombre]">
+                <img src="assets/iconos/ver.ico" alt="Icono Ver Detalles"
+                  style="width: 20px; height: 20px; margin-right: 10px;">
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Notificación de eliminación -->
+<div id="notification" class="notification">
+  <span id="notification-message"></span>
+</div>

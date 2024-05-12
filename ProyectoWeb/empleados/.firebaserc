@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "perruna-cd211": {
+      "hosting": {
+        "empleados": [
+          "perruna-cd211"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "perruna-cd211"
+  }
+}

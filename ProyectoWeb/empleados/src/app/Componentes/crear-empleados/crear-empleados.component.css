@@ -1,0 +1,21 @@
+.notification {
+  display: none;
+  position: fixed;
+  bottom: 20px; /* Cambiamos la posición a abajo */
+  right: 20px; /* Cambiamos la posición a derecha */
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease; /* Agregamos transición para efecto de difuminado */
+}
+
+.notification.show {
+  display: block;
+  opacity: 1;
+}
+
+.notification.hide {
+  opacity: 0;
+}

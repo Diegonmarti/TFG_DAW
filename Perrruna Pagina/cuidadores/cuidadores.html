@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Perruna</title>
+    <link rel="stylesheet" href="../cuidadores/cuidadores.css" />
+    <link rel="icon" href="../fotos/perro2.png" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="wrap">
+        <div id="logo" style="text-align: center">
+          <a href="../index.html"
+            ><img
+              src="../fotos/perro.png"
+              width="52"
+              height="52"
+              style="margin: 0 auto"
+          /></a>
+        </div>
+
+        <nav id="menu">
+          <ul>
+            <li class="switch-container">
+              <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle" />
+                <span class="slider"></span>
+              </label>
+            </li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../cuidadores/cuidadores.html">Cuidadores</a></li>
+            <li><a href="../servicios/servicios.html">Servicios</a></li>
+            <li><a href="../ubicacion/mapa.html">Ubicacion</a></li>
+            <li><a href="../contacto/contacto.html">Contacto</a></li>
+            <li class="cerrar">
+              <a href="../login/Login.html"
+                ><img
+                  src="../fotos/user.png"
+                  width="52"
+                  height="52"
+                  style="margin: 0 auto"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <ul class="cards" id="cards-container">
+      <!-- Las tarjetas se agregarán aquí con JavaScript -->
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyA_SM6d1nCztP2JON5DHytWOOWs7Jl_Ff4",
+        authDomain: "perruna-cd211.firebaseapp.com",
+        projectId: "perruna-cd211",
+        storageBucket: "perruna-cd211.appspot.com",
+        messagingSenderId: "796763331783",
+        appId: "1:796763331783:web:2fd75de7e305206f66b2e2",
+        measurementId: "G-RHB6WS2L9H",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      // Obtén una referencia a la colección "Datos Prueba/Datos Prueba"
+      var database = firebase.database();
+      var datosPruebaRef = database.ref("Datos Prueba/Datos Prueba");
+
+      // Obtén los datos y crea las tarjetas
+      datosPruebaRef.once("value", function (snapshot) {
+        var cardsContainer = document.getElementById("cards-container");
+        var counter = 0; // contador para rastrear los elementos
+
+        snapshot.forEach(function (childSnapshot) {
+          var cardData = childSnapshot.val();
+          var cardHTML = `
+      <li>
+        <a href="" class="card">
+          <img src="${cardData.image}" class="card__image" alt=""/>
+          <div class="card__overlay">
+            <div class="card__header">
+              <img class="card__thumb" src="${cardData.image}" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">${cardData.title}</h3>
+                <span class="card__tagline">${cardData.tagline}</span>
+                <span class="estrellas">${cardData.estrellas}</span>
+                <h5 class="puntuacion">${cardData.puntuacion}</h5>
+              </div>
+            </div>
+            <p class="card__description">${cardData.description}</p>
+          </div>
+        </a>
+      </li>
+    `;
+          cardsContainer.innerHTML += cardHTML;
+          counter++;
+
+          // Si hemos alcanzado un múltiplo de cuatro, agregamos un salto de línea para crear grupos de cuatro
+          if (counter % 4 === 0) {
+            cardsContainer.innerHTML += "";
+          }
+        });
+      });
+    </script>
+    <script>
+      const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+      darkModeToggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>

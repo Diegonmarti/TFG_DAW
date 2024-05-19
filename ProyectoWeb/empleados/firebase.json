@@ -1,11 +1,16 @@
 {
-  "hosting": [
-    {
-      "target": "empleados",
-      "source": ".",
-      "frameworksBackend": {
-        "region": "europe-west1"
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
-    }
-  ]
+    ]
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadoService } from '../../Servicios/empleado.service2';
+import { EmpleadoService2 } from '../../Servicios/empleado.service2';
+import { EmpleadoService3 } from '../../Servicios/empleado.service3';
 
 @Component({
   selector: 'tabla-empleados',
@@ -9,41 +10,64 @@ import { EmpleadoService } from '../../Servicios/empleado.service2';
 export class TablaComponent implements OnInit {
   empleados: any[] = [];
   empleadosFiltrados: any[] = [];
+  role: string = 'owner';
 
-  constructor(private _empleadoService: EmpleadoService) {}
+  constructor(private _empleadoService: EmpleadoService2, private _empleadoService3: EmpleadoService3) {}
 
   ngOnInit(): void {
-    this.getEmpleados();
+    this.getEmpleadosDueño();
   }
 
-  getEmpleados(): void {
-    this._empleadoService.getEmpleados().subscribe(data => {
-      this.empleados = [];
-      data.forEach((element: any) => {
-        const empleadoData = element.payload.doc.data();
-        const empleado: any = {
-          id: element.payload.doc.id,
-          nombre: empleadoData.nombre,
-          email: empleadoData.email,
-          phone: empleadoData.phone,
-        };
-        this.empleados.push(empleado);
-      });
-      this.empleadosFiltrados = this.empleados; // Inicialmente, mostrar todos los empleados
-      console.log('Empleados en la colección:', this.empleados);
-    }, error => {
-      console.error('Error al obtener empleados:', error);
+  onRoleChange(event: any): void {
+    this.role = event.target.value;
+    if (this.role === 'owner') {
+      this.getEmpleadosDueño();
+    } else {
+      this.getEmpleadosCuidador();
+    }
+  }
+
+  getEmpleadosDueño(): void {
+    this._empleadoService.getEmpleados().subscribe((data: any) => {
+      this.empleados = data.map((e: any) => ({
+        id: e.payload.doc.id,
+        ...e.payload.doc.data()
+      }));
+      this.empleadosFiltrados = this.empleados;
+      console.log('Empleados en la colección (Dueños):', this.empleados);
+    }, (error: any) => {
+      console.error('Error al obtener empleados (Dueños):', error);
+    });
+  }
+
+  getEmpleadosCuidador(): void {
+    this._empleadoService3.getEmpleados3().subscribe((data: any) => {
+      this.empleados = data;
+      this.empleadosFiltrados = this.empleados;
+      console.log('Empleados en la colección (Cuidadores):', this.empleados);
+    }, (error: any) => {
+      console.error('Error al obtener empleados (Cuidadores):', error);
     });
   }
 
   eliminarEmpleado(id: string): void {
-    this._empleadoService.eliminarEmpleado(id).then(() => {
-      console.log('Empleado eliminado con éxito');
-      this.showNotification('Empleado eliminado correctamente');
-      this.getEmpleados(); // Actualizar la lista de empleados después de eliminar
-    }).catch(error => {
-      console.error('Error al eliminar empleado:', error);
-    });
+    if (this.role === 'owner') {
+      this._empleadoService.eliminarEmpleado(id).then(() => {
+        console.log('Empleado eliminado con éxito');
+        this.showNotification('Empleado eliminado correctamente');
+        this.getEmpleadosDueño();
+      }).catch((error: any) => {
+        console.error('Error al eliminar empleado:', error);
+      });
+    } else {
+      this._empleadoService3.eliminarEmpleado3(id).then(() => {
+        console.log('Empleado eliminado con éxito');
+        this.showNotification('Empleado eliminado correctamente');
+        this.getEmpleadosCuidador();
+      }).catch((error: any) => {
+        console.error('Error al eliminar empleado:', error);
+      });
+    }
   }
 
   showNotification(message: string): void {
@@ -75,7 +99,7 @@ export class TablaComponent implements OnInit {
     }
   }
 
-  buscarEmpleado(valor: string) {
+  buscarEmpleado(valor: string): void {
     if (valor) {
       this.empleadosFiltrados = this.empleados.filter(empleado =>
         empleado.nombre.toLowerCase().includes(valor.toLowerCase())
@@ -85,9 +109,8 @@ export class TablaComponent implements OnInit {
     }
   }
 
-  onBuscarEmpleado(event: any) {
+  onBuscarEmpleado(event: any): void {
     const valor = event.target.value;
     this.buscarEmpleado(valor);
   }
-
 }

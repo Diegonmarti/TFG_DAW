@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EmpleadoService } from '../../Servicios/empleado.service2';
+import { EmpleadoService2 } from '../../Servicios/empleado.service2';
 
 @Component({
   selector: 'app-crear-empleados',
@@ -11,7 +11,7 @@ export class CrearEmpleadosComponent implements OnInit {
   crearempleado: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService) {
+  constructor(private fb: FormBuilder, private empleadoService: EmpleadoService2) {
     this.crearempleado = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', Validators.required],

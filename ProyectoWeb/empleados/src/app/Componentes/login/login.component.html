@@ -7,21 +7,17 @@
     <div class="user-box">
       <input type="text" name="username" [(ngModel)]="username" required>
       <label>Username</label>
-      <div *ngIf="!isUsernameValid" class="error-msg">
-        <span>!</span> Username incorrecto
-        <img *ngIf="!isUsernameValid" src="../../../assets/iconos/exclamacion.png" alt="Error" class="error-icon">
-      </div>
     </div>
     <div class="user-box">
       <input type="password" name="password" [(ngModel)]="password" required>
       <label>Password</label>
-      <div *ngIf="!isPasswordValid" class="error-msg">
-        <span>!</span> Password incorrecto
-        <img *ngIf="!isPasswordValid" src="../../../assets/iconos/exclamacion.png" alt="Error" class="error-icon">
-      </div>
     </div>
-    <button type="submit" [ngClass]="{'error': !isUsernameValid || !isPasswordValid}">
+    <button type="submit">
       Submit
     </button>
   </form>
+  <div *ngIf="errorMessage" class="error-msg">
+    <span>!</span> {{ errorMessage }}
+    <img src="../../../assets/iconos/exclamacion.png" alt="Error" class="error-icon">
+  </div>
 </div>

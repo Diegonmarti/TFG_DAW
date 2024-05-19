@@ -1,14 +1,71 @@
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-header .h3 {
+  margin: 0;
+}
+
+.no-data {
+  margin-top: 15px;
+  color: brown;
+  text-align: center;
+}
+
+.input-group .form-control {
+  flex-grow: 1;
+}
+
+.input-group .btn {
+  flex-shrink: 0;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table tbody .nombre {
+  padding-left: 200px; /* Aumenta el espaciado del nombre */
+}
+
+.table tbody .acciones {
+  padding-right: 30px; /* Aumenta el espaciado de las acciones */
+}
+
+.nombre{
+  padding-left: 200px; /* Aumenta el espaciado del nombre */
+}
+.action-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 .notification {
   display: none;
   position: fixed;
-  bottom: 20px; /* Cambiamos la posición a abajo */
-  right: 20px; /* Cambiamos la posición a derecha */
+  bottom: 20px;
+  right: 20px;
   padding: 15px;
   background-color: #ba1d1d;
   color: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease; /* Agregamos transición para efecto de difuminado */
+  transition: opacity 0.3s ease;
 }
 
 .notification.show {
@@ -18,19 +75,5 @@
 
 .notification.hide {
   opacity: 0;
-}
-
-.form-control {
-  width: 150px;
-}
-
-.btn {
-  margin-top: 10px;
-  width: 20%;
-}
-
-.h3 {
-  text-align: center;
-  display: block;
-  width: 100%;
+  transition: opacity 0.3s ease;
 }

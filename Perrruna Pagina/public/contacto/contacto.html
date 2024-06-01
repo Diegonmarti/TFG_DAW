@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha de la aplicación DoggieApp</title>
   <link rel="stylesheet" href="../contacto/contacto.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
@@ -20,7 +22,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -37,87 +39,83 @@
   <header id="header">
     <div class="wrap">
       <div id="logo" style="text-align: center;">
-        <a href="../index.html"><img src="../fotos/perro.png" width="52" height="52"
-            style="margin: 0 auto;"></a>
+        <a href="../index.html"><img src="../fotos/perro.png" width="52" height="52" alt="Logo"></a>
       </div>
-
       <nav id="menu">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="../cuidadores/cuidadores.html">Cuidadores</a></li>
           <li><a href="../servicios/servicios.html">Servicios</a></li>
-          <li><a href="../ubicacion/mapa.html">Ubicacion</a></li>
+          <li><a href="../ubicacion/mapa.html">Ubicación</a></li>
           <li><a href="../contacto/contacto.html">Contacto</a></li>
           <li class="cerrar"><a href="../login/Login.html"><img src="../fotos/user.png" width="52" height="52"
-                style="margin: 0 auto;"></a></li>
+                alt="User"></a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <center>
-    <h1>Contacto de Mi-Mascota Perruna</h1>
-  </center>
-  <div class="container">
-    <div id="map"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <div class="card">
-      <div class="ficha-app article-asset-normal">
-        <div class="ficha-app-image">
-          <img src="../fotos/perro2.png" alt="DoggieApp">
-        </div>
-        <div class="ficha-app-description">
-          <h3 class="ficha-app-name">Mi-Mascota Perruna</h3>
-          <p data-mrf-recirculation="Article links">¡Descubre el compañero perfecto para tu perro! DoggieApp ofrece una
-            amplia gama de servicios y consejos para el cuidado y entretenimiento de tu mascota. ¡Explora nuestras
-            funciones y haz que tu perro sea el más feliz!</p>
-        </div>
-        <div class="ficha-app-buttons">
-          <a href="https://play.google.com/store/apps/details?id=doggieapp.android" class="btn-googleplay-app"
-            target="_blank">Descargar gratis (Android)</a>
+
+  <main>
+    <center>
+      <h1>Contacto de Mi-Mascota Perruna</h1>
+    </center>
+
+    <div class="container">
+      <div id="map"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+
+      <div class="card">
+        <div class="ficha-app article-asset-normal">
+          <div class="ficha-app-image">
+            <img src="../fotos/perro2.png" alt="DoggieApp">
+          </div>
+          <div class="ficha-app-description">
+            <h3 class="ficha-app-name">Mi-Mascota Perruna</h3>
+            <p data-mrf-recirculation="Article links">¡Descubre el compañero perfecto para tu perro! DoggieApp ofrece una
+              amplia gama de servicios y consejos para el cuidado y entretenimiento de tu mascota. ¡Explora nuestras
+              funciones y haz que tu perro sea el más feliz!</p>
+          </div>
+          <div class="ficha-app-buttons">
+            <a href="https://play.google.com/store/apps/details?id=doggieapp.android" class="btn-googleplay-app"
+              target="_blank">Descargar gratis (Android)</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="card2 contact-form">
-      <div class="formulario-contacto">
-        <form action="#" method="post">
-          <center>
-            <h2>Contacto</h2>
-          </center>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
-          <input type="submit" value="Enviar" onclick="enviarFormulario()">
+
+    <section class="section2">
+      <div class="contactform">
+        <h5>Contacta con nosotros</h5>
+        <form action="#">
+          <label for="firstname">
+            <i class="cntfrmicn fa fa-user"></i>
+            <input name="firstname" class="form-fields" type="text" placeholder="Nombre">
+          </label>
+          <label for="email">
+            <i class="cntfrmicn fa fa-envelope"></i>
+            <input name="email" class="form-fields" type="email" placeholder="Correo Electrónico">
+          </label>
+          <label for="contact">
+            <i class="cntfrmicn fa fa-phone"></i>
+            <input name="contact" class="form-fields" type="tel" placeholder="Teléfono">
+          </label>
+          <label for="textarea">
+            <i class="cntfrmicn fa fa-comment"></i>
+            <textarea class="form-fields" name="textarea" id="textarea" cols="30" rows="10"
+              placeholder="Mensaje"></textarea>
+          </label>
+          <button class="form-fields button" type="submit">Send <i class="fa fa-paper-plane"></i></button>
         </form>
       </div>
-    </div>
-    <div class="accordion">
-      <button class="accordion-item">¿Cuál es el precio de la aplicación?</button>
-      <div class="accordion-content">
-        <p>El precio de la aplicación es gratuito para dispositivos Android. ¡Puedes descargarla ahora mismo desde
-          el botón que hay encima!</p>
+
+      <div class="contmap" style="overflow:hidden;height:550px;width:100%;">
+        <div id="gmap_canvas" style="height:100%;width:100%;"></div>
       </div>
 
-      <button class="accordion-item">¿Qué servicios ofrece Mi-Mascota Perruna?</button>
-      <div class="accordion-content">
-        <p>Mi-Mascota Perruna ofrece una amplia gama de servicios y consejos para el cuidado y entretenimiento de tu mascota,
-          incluyendo paseos, cuidadores, consejos de salud, y mucho más.</p>
-      </div>
+    </section>
 
-      <button class="accordion-item">¿Dónde puedo obtener ayuda si tengo problemas con la aplicación?</button>
-      <div class="accordion-content">
-        <p>Si tienes algún problema con la aplicación, por favor contáctanos a través de nuestro formulario de contacto
-          y estaremos encantados de ayudarte.</p>
-      </div>
-    </div>
-  </div>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+  <script src="../contacto/contacto.js"></script>
 </body>
-<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
-<script src="../contacto/contacto.js"></script>
 
 </html>

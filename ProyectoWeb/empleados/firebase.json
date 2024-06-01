@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "site": "perruna-cd211",
-    "public": "public",
+    "site": "perrunaangular",
+    "public": "dist/empleados/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

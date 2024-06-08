@@ -36,11 +36,10 @@ input[type="submit"] {
 
 /* HEADER */
 #header {
-  background-color: hsl(160, 40%, 38%);
+  background-color: hsl(202, 27%, 50%);
   height: 70px;
   padding-top: 10px;
   position: fixed;
-  background-color: hsl(160, 40%, 38%);
   top: 0;
   left: 0;
   width: 100%;
@@ -92,7 +91,7 @@ input[type="submit"] {
 }
 
 #menu ul li:hover a {
-  color: gold;
+  color: rgb(19, 48, 65);
 }
 
 #menu ul li:hover {
@@ -150,7 +149,7 @@ body {
   width: 104%;
   height: 102%;
   border-radius: 8px;
-  background-image: linear-gradient(var(--rotate), #c231a0, #fd9bed 43%, #f4b1f9);
+  background-image: linear-gradient(var(--rotate), #3175c2, #6eb7d6 43%, #a9e1e7);
   position: absolute;
   z-index: -1;
   top: -1%;
@@ -175,7 +174,7 @@ body {
   width: 104%;
   height: 102%;
   border-radius: 8px;
-  background-image: linear-gradient(var(--rotate), #c231a0, #fd9bed 43%, #f4b1f9);
+  background-image: linear-gradient(var(--rotate), #3155c2, #6bb8dd 43%, #8ee1de);
   position: absolute;
   z-index: -1;
   left: -2%;
@@ -212,7 +211,7 @@ h1 {
   display: inline-block;
   margin: 10px;
   padding: 12px 24px;
-  background-color: #b20ca9;
+  background-color: #446081;
   color: #fff;
   text-decoration: none;
   font-size: 18px;
@@ -222,7 +221,7 @@ h1 {
 
 .btn-googleplay-app:hover,
 .btn-ios-app:hover {
-  background-color: #f875e6;
+  background-color: #86a3e2;
 }
 
 .switch-container {
@@ -367,7 +366,7 @@ body.dark-mode {
 .formulario-contacto input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #446081;
   color: #fff;
   font-size: 16px;
   border: none;
@@ -401,7 +400,7 @@ body.dark-mode {
 .ficha-app-buttons .btn-googleplay-app {
   display: inline-block;
   padding: 10px 20px;
-  background-color: purple;
+  background-color: rgb(22, 78, 119);
   color: #fff;
   font-size: 16px;
   text-decoration: none;

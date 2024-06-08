@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "perruna-cd211",
     "public": "public",
     "ignore": [
       "firebase.json",

@@ -146,19 +146,19 @@ perfilItem.removeAttribute("href");
 contactoItem.removeAttribute("href");
 
 // aplicar estilo de elemento deshabilitado
-serviciosItem.style.color = "rgb(255, 215, 0)";
+serviciosItem.style.color = "rgb(0, 0, 0)";
 serviciosItem.style.cursor = "default";
 serviciosItem.style.textDecoration = "none";
 
-ubicacionItem.style.color = "rgb(255, 215, 0)";
+ubicacionItem.style.color = "rgb(0, 0, 0)";
 ubicacionItem.style.cursor = "default";
 ubicacionItem.style.textDecoration = "none";
 
-perfilItem.style.color = "rgb(255, 215, 0)";
+perfilItem.style.color = "rgb(0, 0, 0)";
 perfilItem.style.cursor = "default";
 perfilItem.style.textDecoration = "none";
 
-contactoItem.style.color = "rgb(255, 215, 0)";
+contactoItem.style.color = "rgb(0, 0, 0)";
 contactoItem.style.cursor = "default";
 contactoItem.style.textDecoration = "none";
 

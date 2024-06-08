@@ -32,7 +32,7 @@
   
   /* HEADER */
   #header {
-  background-color: hsl(160, 40%, 38%);
+  background-color: hsl(202, 27%, 50%);
   height: 70px;
   padding-top: 10px;
   position: fixed;
@@ -41,7 +41,7 @@
   }
   
   #logo {
-  background-color: hsl(160, 40%, 38%);
+  background-color: hsl(202, 27%, 50%);
   border-radius: 2px;
   cursor: pointer;
   float: left;
@@ -86,7 +86,7 @@
   }
   
   #menu ul li:hover a {
-    color: gold;
+    color: rgb(19, 48, 65);
   }
   
   #menu ul li:hover {
@@ -115,24 +115,9 @@ height: 70px;
   justify-content: center;
   margin-top: 120px;
   }
-  
-  /* BLOG */
-  #Blog {
-  z-index: 2;
-  background-color: rgb(182, 243, 209);
-  height: 90vh;
-  }
-  
-  /* FOOTER */
-  footer {
-  background-color: rgb(182, 243, 209);
-  height: 400px;
-  padding: 50px;
-  text-align: center;
-  }
-  
+
   footer a {
-  color: gold;
+  color: rgb(30, 84, 115);
   text-decoration: none;
   }
   
@@ -354,7 +339,7 @@ transform-style: preserve-3d;
 }
 
 #forgot-password-btn {
-background-color: rgb(255, 153, 57);
+background-color: rgb(42, 17, 92);
 position: relative;
 bottom: 110px;
 left: 680px; /* aumentamos el valor de right */
@@ -380,8 +365,9 @@ align-items: center;
 }
 
 h1 {
-margin-bottom: calc(0.7rem + 0.5vmin);
-font-size: calc(2.3rem + 1vmin);
+font-size: 50px;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: #044973;
 }
 
 .blue-line {

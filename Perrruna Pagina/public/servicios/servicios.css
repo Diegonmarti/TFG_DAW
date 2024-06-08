@@ -37,11 +37,10 @@
   
     /* HEADER */
     #header {
-      background-color: hsl(160, 40%, 38%);
+      background-color: hsl(202, 27%, 50%);
       height: 70px;
       padding-top: 10px;
       position: fixed;
-      background-color: hsl(160, 40%, 38%);
       top: 0;
       left: 0;
       width: 100%;
@@ -92,7 +91,7 @@
     }
     
     #menu ul li:hover a {
-      color: gold;
+      color: rgb(19, 48, 65);
     }
     
     #menu ul li:hover {
